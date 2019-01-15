@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: register
+  security:
+    basic:
+      enabled: true
+    user:
+      name: admin
+      password: admin123
+  cloud:
+    client:
+      ip-address: 127.0.0.1
+server:
+  port: 8101
+eureka:
+  server:
+    enable-self-preservation: false
+  instance:
+    hostname:  127.0.0.1
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+#    healthcheck:
+#      enabled: true
+#    serviceUrl:
+#      defaultZone: http://admin:admin123@localhost:8101/eureka/

@@ -1,0 +1,7 @@
+encrypt:
+#  key: springcloud
+  keyStore:
+    location: classpath:server.jks
+    password: 111111
+    alias: serverkey
+    secret: 111111

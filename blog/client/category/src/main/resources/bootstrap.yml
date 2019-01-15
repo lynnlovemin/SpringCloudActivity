@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    config:
+      name: eurekaclient,category,datasource,redis,rabbitmq,encrypt
+      label: master
+      discovery:
+        enabled: true
+        serviceId: config
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:admin123@localhost:8101/eureka/

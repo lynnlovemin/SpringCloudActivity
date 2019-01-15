@@ -1,0 +1,45 @@
+server:
+  port: 8102
+spring:
+  application:
+    name: config
+  cloud:
+    client:
+      ip-address:  127.0.0.1
+    config:
+      server:
+        git:
+          uri: https://github.com/lynnlovemin/SpringCloud-.git
+#          uri: https://github.com/lynnlovemin/SpringCloudActivity.git
+          searchPaths: config
+          username: lynnlovemin
+          password: liyi880301
+      label: master
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtualHost: /
+    publisherConfirms: true
+  security:
+    basic:
+      enable: true
+    user:
+      name: admin
+      password: admin
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info,bus-refresh
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://admin:admin123@localhost:8101/eureka/

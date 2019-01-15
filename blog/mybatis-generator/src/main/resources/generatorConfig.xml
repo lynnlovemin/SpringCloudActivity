@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+    <!-- 配置文件 -->
+    <properties resource="generator.properties"></properties>
+
+    <!-- 驱动包 -->
+    <classPathEntry location="${classPathEntry}" />
+
+    <context id="MysqlContext" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!-- 由于beginningDelimiter和endingDelimiter的默认值为双引号(")，在Mysql中不能这么写，所以还要将这两个默认值改为`  -->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <property name="useActualColumnNames" value="false" />
+
+        <!-- 为生成的Java模型创建一个toString方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
+
+        <!-- 为生成的Java模型类添加序列化接口，并生成serialVersionUID字段 -->
+        <plugin type="com.lynn.blog.generator.plugin.SerializablePlugin">
+            <property name="suppressJavaInterface" value="false"/>
+        </plugin>
+
+        <!-- 生成一个新的selectByExample方法，这个方法可以接收offset和limit参数，主要用来实现分页 -->
+        <plugin type="com.lynn.blog.generator.plugin.PaginationPlugin"></plugin>
+
+        <!-- Java模型生成equals和hashcode方法 -->
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
+
+        <!-- 生成的代码去掉注释 -->
+        <commentGenerator type="com.lynn.blog.generator.plugin.CommentGenerator">
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <!-- 数据库连接 -->
+        <jdbcConnection driverClass="${generator.jdbc.driver}"
+                        connectionURL="${generator.jdbc.url}"
+                        userId="${generator.jdbc.username}"
+                        password="${generator.jdbc.password}"/>
+        <javaTypeResolver type="com.lynn.blog.generator.plugin.TypeGenerator"/>
+
+        <!-- model生成 -->
+        <javaModelGenerator targetPackage="com.lynn.blog.pub.domain.entity" targetProject="src/main/java"/>
+        <!-- MapperXML生成 -->
+        <sqlMapGenerator targetPackage="com.lynn.blog.pub.xml" targetProject="src/main/java"/>
+        <!-- Mapper接口生成 -->
+        <javaClientGenerator targetPackage="com.lynn.blog.pub.mapper" targetProject="src/main/java" type="XMLMAPPER"/>
+        <table tableName="blog" domainObjectName="Blog"><property name="useActualColumnNames" value="false" /></table>
+        <table tableName="category" domainObjectName="Category"><property name="useActualColumnNames" value="false" /></table>
+        <table tableName="collect" domainObjectName="Collect"><property name="useActualColumnNames" value="false" /></table>
+        <table tableName="comment" domainObjectName="Comment"><property name="useActualColumnNames" value="false" /></table>
+        <table tableName="like" domainObjectName="Like"><property name="useActualColumnNames" value="false" /></table>
+        <table tableName="user" domainObjectName="User"><property name="useActualColumnNames" value="false" /></table>
+    </context>
+</generatorConfiguration>
