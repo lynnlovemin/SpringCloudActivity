@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/blog_db?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: 1qaz2wsx
+      stat-view-servlet:
+        login-username: admin
+        login-password: admin
+mybatis:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  configuration:
+    #配置项：开启下划线到驼峰的自动转换. 作用：将数据库字段根据驼峰规则自动注入到对象属性。
+    map-underscore-to-camel-case: true
