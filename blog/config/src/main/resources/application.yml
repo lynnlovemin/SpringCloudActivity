@@ -9,11 +9,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/lynnlovemin/SpringCloud-.git
-#          uri: https://github.com/lynnlovemin/SpringCloudActivity.git
+          uri: https://github.com/lynnlovemin/SpringCloudActivity.git
           searchPaths: config
-          username: lynnlovemin
-          password: liyi880301
+          username: ******
+          password: ******
       label: master
   rabbitmq:
     host: 127.0.0.1
@@ -42,4 +41,4 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://admin:admin123@localhost:8101/eureka/
+      defaultZone: http://admin:admin123@node2:8101/eureka/

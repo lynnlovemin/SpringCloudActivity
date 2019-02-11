@@ -43,6 +43,12 @@ public class ErrorHandlerConfiguration {
         this.serverCodecConfigurer = serverCodecConfigurer;
     }
 
+    /**
+     * gateway启动时执行此方法，将JsonExceptionHandler注入到Spring容器中
+     * 以便发生异常时执行自定义的JsonExceptionHandler
+     * @param errorAttributes
+     * @return
+     */
     @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE)
     public ErrorWebExceptionHandler errorWebExceptionHandler(ErrorAttributes errorAttributes) {

@@ -11,6 +11,11 @@ import org.springframework.web.reactive.function.server.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 自定义异常处理
+ * SpringBoot提供了默认的异常处理类，即图8-3演示效果，这显然不符合我们的预期
+ * 因此需要重写此类，返回统一的Json格式
+ */
 public class JsonExceptionHandler extends DefaultErrorWebExceptionHandler {
 
     public JsonExceptionHandler(ErrorAttributes errorAttributes, ResourceProperties resourceProperties,
