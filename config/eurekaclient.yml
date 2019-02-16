@@ -1,7 +1,7 @@
 spring:
   cloud:
     inetutils:
-      preferred-networks: 172.20.10.4
+      preferred-networks: 127.0.0.1
 eureka:
   instance:
     prefer-ip-address: true
