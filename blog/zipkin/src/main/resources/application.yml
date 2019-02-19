@@ -1,0 +1,8 @@
+server:
+  port: 9411
+management:
+  metrics:
+    web:
+      server:
+        #默认为true，这里设置为false，否则会报：ava.lang.IllegalArgumentException: Prometheus requires that all meters with the same name have the same set of tag keys. There is already an existing meter containing tag keys [method, status, uri]. The meter you are attempting to register has keys [exception, method, status, uri].
+        auto-time-requests: false

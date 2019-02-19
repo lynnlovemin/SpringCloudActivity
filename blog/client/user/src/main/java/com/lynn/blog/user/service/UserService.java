@@ -3,12 +3,10 @@ package com.lynn.blog.user.service;
 import com.lynn.blog.common.result.MultiResult;
 import com.lynn.blog.common.result.SingleResult;
 import com.lynn.blog.pub.domain.request.PageRequest;
-import com.lynn.blog.user.domain.request.AddBlogRequest;
-import com.lynn.blog.user.domain.request.LoginRequest;
-import com.lynn.blog.user.domain.request.RegisterRequest;
-import com.lynn.blog.user.domain.request.UpdatePasswordRequest;
+import com.lynn.blog.user.domain.request.*;
 import com.lynn.blog.user.domain.response.GetMyBlogResponse;
 import com.lynn.blog.user.domain.response.GetMyCollectBlogResponse;
+import com.lynn.blog.user.domain.response.GetUserinfoResponse;
 import com.lynn.blog.user.domain.response.TokenResponse;
 
 public interface UserService {
@@ -59,4 +57,11 @@ public interface UserService {
      * @return
      */
     SingleResult<AddBlogRequest> addBlog(AddBlogRequest request,Long userId);
+
+    /**
+     * 获得用户信息
+     * @param request
+     * @return
+     */
+    SingleResult<GetUserinfoResponse> getUserinfo(GetUserinfoRequest request);
 }

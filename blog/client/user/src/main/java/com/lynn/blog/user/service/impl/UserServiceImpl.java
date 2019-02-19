@@ -9,14 +9,13 @@ import com.lynn.blog.pub.domain.entity.UserExample;
 import com.lynn.blog.pub.domain.request.PageRequest;
 import com.lynn.blog.pub.mapper.BlogMapper;
 import com.lynn.blog.pub.mapper.UserMapper;
-import com.lynn.blog.user.domain.request.AddBlogRequest;
-import com.lynn.blog.user.domain.request.LoginRequest;
-import com.lynn.blog.user.domain.request.RegisterRequest;
-import com.lynn.blog.user.domain.request.UpdatePasswordRequest;
+import com.lynn.blog.user.domain.request.*;
 import com.lynn.blog.user.domain.response.GetMyBlogResponse;
 import com.lynn.blog.user.domain.response.GetMyCollectBlogResponse;
+import com.lynn.blog.user.domain.response.GetUserinfoResponse;
 import com.lynn.blog.user.domain.response.TokenResponse;
 import com.lynn.blog.user.service.UserService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -138,5 +137,13 @@ public class UserServiceImpl implements UserService{
     @Transactional(rollbackFor = Exception.class)
     public SingleResult<AddBlogRequest> addBlog(AddBlogRequest request, Long userId) {
         return null;
+    }
+
+    @Override
+    public SingleResult<GetUserinfoResponse> getUserinfo(GetUserinfoRequest request) {
+        User user = userMapper.selectByPrimaryKey(request.getUserId());
+        GetUserinfoResponse response = new GetUserinfoResponse();
+        BeanUtils.copyProperties(user,response);
+        return SingleResult.buildSuccess(response);
     }
 }

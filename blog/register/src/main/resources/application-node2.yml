@@ -2,7 +2,8 @@ server:
   port: 8101
 eureka:
   instance:
-    hostname:  node2
+#    hostname:  node2
   client:
     serviceUrl:
-      defaultZone: http://admin:admin123@node1:8100/eureka/
+#      defaultZone: http://admin:admin123@node1:8100/eureka/
+      defaultZone: http://admin:admin123@localhost:8101/eureka/

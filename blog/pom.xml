@@ -15,6 +15,7 @@
         <module>common</module>
         <module>test</module>
         <module>mybatis-generator</module>
+        <module>zipkin</module>
     </modules>
     <packaging>pom</packaging>
 

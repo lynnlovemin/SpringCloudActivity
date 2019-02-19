@@ -1,5 +1,6 @@
 package com.lynn.blog.common.result;
 
+import com.alibaba.fastjson.JSON;
 import lombok.Data;
 
 /**
@@ -20,4 +21,8 @@ public class Result {
 		return message != null?message:code.getMessage();
 	}
 
+	@Override
+	public String toString(){
+		return JSON.toJSONString(this);
+	}
 }

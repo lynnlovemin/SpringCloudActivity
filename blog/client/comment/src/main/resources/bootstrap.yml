@@ -6,6 +6,8 @@ spring:
       discovery:
         enabled: true
         serviceId: config
+      username: admin
+      password: admin
 eureka:
   client:
     serviceUrl:
