@@ -9,7 +9,7 @@ spring:
         enabled: true
   sleuth:
     sampler:
-      percentage: 1.0
+      probability: 1.0
 eureka:
   instance:
     prefer-ip-address: true
