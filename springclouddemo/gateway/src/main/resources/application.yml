@@ -14,15 +14,9 @@ logging:
     org.springframework.http.server.reactive: debug
     org.springframework.web.reactive: debug
     reactor.ipc.netty: debug
-feign:
-  hystrix:
-    enabled: true
 eureka:
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
     register-with-eureka: true
     fetch-registry: true
-    serviceUrl:
+    service-url:
       defaultZone: http://localhost:8761/eureka/

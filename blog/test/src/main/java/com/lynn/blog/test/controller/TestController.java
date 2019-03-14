@@ -11,14 +11,16 @@ public class TestController {
 
     @Value("${server.port}")
     private String port;
+    @Value("${spring.zipkin.baseUrl}")
+    private String baseUrl;
 
     @RequestMapping("test")
     public String test(){
         try {
-            Thread.sleep(40000);
+//            Thread.sleep(40000);
         }catch (Exception e){
             e.printStackTrace();
         }
-        return port;
+        return baseUrl;
     }
 }
