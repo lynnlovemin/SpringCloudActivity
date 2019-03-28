@@ -17,6 +17,6 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh,health,info,/actuator/hystrix.stream
+        include: refresh,health,info
 
 
