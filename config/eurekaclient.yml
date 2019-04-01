@@ -3,7 +3,7 @@ spring:
     inetutils:
       preferred-networks: 127.0.0.1
   zipkin:
-    baseUrl: http://localhost:9411
+    base-url: http://localhost:9411
     locator:
       discovery:
         enabled: true
