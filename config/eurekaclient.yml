@@ -6,7 +6,7 @@ spring:
     baseUrl: http://localhost:9411
   sleuth:
     sampler:
-      probability : 1.0
+      probability : 1
 eureka:
   instance:
     prefer-ip-address: true
