@@ -3,10 +3,10 @@ spring:
     inetutils:
       preferred-networks: 127.0.0.1
   zipkin:
-    baseUrl: http://172.20.10.4:9411
+    baseUrl: http://localhost:9411
   sleuth:
     sampler:
-      probability: 1
+      percentage: 1.0
 eureka:
   instance:
     prefer-ip-address: true
