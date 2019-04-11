@@ -1,14 +1,14 @@
 package com.lynn.blog.register;
 
-import org.springframework.boot.SpringApplication;
+import com.lynn.blog.common.app.Application;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @EnableEurekaServer
 @SpringCloudApplication
-public class RegisterApplication {
+public class RegisterApplication extends Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(RegisterApplication.class,args);
+        Application.startup(RegisterApplication.class,args);
     }
 }

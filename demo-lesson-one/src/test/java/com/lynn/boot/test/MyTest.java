@@ -2,6 +2,7 @@ package com.lynn.boot.test;
 
 import com.lynn.boot.Application;
 import com.lynn.boot.bean.Person;
+import com.lynn.boot.properties.ThirdProperties;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,11 @@ public class MyTest {
 
     @Autowired
     private Person person;
+    @Autowired
+    private ThirdProperties thirdProperties;
 
     @Test
     public void test(){
-        System.out.println(person);
+        System.out.println(thirdProperties);
     }
 }

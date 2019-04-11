@@ -1,9 +1,8 @@
 package com.lynn.blog.comment.test;
 
 import com.lynn.blog.comment.CommentApplication;
-import com.lynn.blog.comment.api.UserService;
-import com.lynn.blog.comment.api.domain.request.GetUserinfoRequest;
-import com.lynn.blog.comment.domain.request.CommentListRequest;
+import com.lynn.blog.comment.api.TestServiceRibbon;
+import com.lynn.blog.comment.api.TestServiceFeign;
 import com.lynn.blog.comment.service.CommentService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,14 +17,16 @@ public class TestDB {
     @Autowired
     private CommentService commentService;
     @Autowired
-    private UserService userService;
+    private TestServiceFeign userService;
+    @Autowired
+    private TestServiceRibbon userServiceRibbon;
 
     @Test
     public void test(){
         try {
-            GetUserinfoRequest request = new GetUserinfoRequest();
-            request.setUserId(1L);
-            System.out.println(userService.getUserinfo(request));
+//            GetUserinfoRequest request = new GetUserinfoRequest();
+//            request.setUserId(1L);
+//            System.out.println(userServiceRibbon.getUserinfo(request));
 //            CommentAddRequest request = new CommentAddRequest();
 //            request.setBlogId(1L);
 //            request.setContent("不错！");

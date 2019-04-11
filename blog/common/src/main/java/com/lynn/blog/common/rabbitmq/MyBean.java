@@ -21,12 +21,10 @@ public class MyBean {
     @RabbitHandler
     @RabbitListener(queues = "someQueue")
     public void processMessage(String content) {
-        // ...
-        System.out.println(content);
+        System.out.println("接收到消息："+content);
     }
 
     public void send(String content){
-        amqpAdmin.declareQueue(new Queue("someQueue"));
-        amqpTemplate.convertSendAndReceive(content);
+        amqpTemplate.convertAndSend("someQueue",content);
     }
 }

@@ -48,7 +48,7 @@ public class AesEncryptUtils {
         String content = "{}";
         System.out.println("加密前：" + content);
 
-        String encrypt = aesEncrypt(content, KEY);
+        String encrypt = aesEncrypt(content, "d7b85f6e214abcda1111111111111111");
         System.out.println(encrypt.length() + ":加密后：" + encrypt);
 
         String decrypt = aesDecrypt("0piTdJHsCXm3iHvg98TDgx+Ef5Ww7uxNwhBzUYy1pXtMV5gWQCDMPblNV7ueRPugBOr16va3giy99y664F2LLPTXTxk7H8kFp9YC2hYtHeeAoFGIwIO7TQGXksMCR3U9aHktNQiXGRHedxVyHxgKngeD9mOFpYA2GcP79N+xTA2bZZ3GlqNMFY7jK3mYoDDFZSjSeF4f+VPQ87YOpxMtaw==", "d7b85f6e214abcda");

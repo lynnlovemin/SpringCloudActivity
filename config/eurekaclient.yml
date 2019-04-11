@@ -3,7 +3,11 @@ spring:
     inetutils:
       preferred-networks: 127.0.0.1
   zipkin:
+<<<<<<< HEAD
     baseUrl: http://localhost:9411/
+=======
+    baseUrl: http://172.20.10.4:9411
+>>>>>>> eebf704d7779017993890dd3018c06cee0a19eb5
   sleuth:
     sampler:
       probability: 1

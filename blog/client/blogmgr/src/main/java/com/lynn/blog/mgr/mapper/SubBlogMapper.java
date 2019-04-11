@@ -17,6 +17,6 @@ public interface SubBlogMapper extends BlogMapper {
     @Select("<script>select * from blog b,user u where b.user_id = u.id <if test=\"null != title\">and b.title = #{title}</if> limit #{offset},#{limit}</script>")
     List<SubBlog> selectBlogList(@Param("title")String title,@Param("offset") int offset,@Param("limit") int limit);
 
-    @SelectProvider(type= BlogProvider.class,method = "selectBlogListProvider")
-    List<SubBlog> selectBlogListProvider(@Param("title")String title,@Param("offset") int offset,@Param("limit") int limit);
+//    @SelectProvider(type= BlogProvider.class,method = "selectBlogListProvider")
+//    List<SubBlog> selectBlogList(@Param("title")String title,@Param("offset") int offset,@Param("limit") int limit);
 }

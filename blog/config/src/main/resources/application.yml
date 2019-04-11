@@ -6,8 +6,6 @@ spring:
   cloud:
     inetutils:
       preferred-networks: 127.0.0.1
-    client:
-      ip-address:  127.0.0.1
     config:
       server:
         git:
@@ -24,8 +22,6 @@ spring:
     virtualHost: /
     publisherConfirms: true
   security:
-    basic:
-      enable: true
     user:
       name: admin
       password: admin
@@ -36,12 +32,9 @@ management:
         include: refresh,health,info,bus-refresh
 eureka:
   instance:
-    hostname: 127.0.0.1
     prefer-ip-address: true
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
     register-with-eureka: true
     fetch-registry: true
-    serviceUrl:
-#      defaultZone: http://admin:admin123@node2:8101/eureka/
+    service-url:
       defaultZone: http://admin:admin123@localhost:8101/eureka/

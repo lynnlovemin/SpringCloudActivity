@@ -11,3 +11,11 @@ spring:
 self:
   message:
     data: 这是我自定义的属性
+third:
+  app-key: 1
+  appSecret: 1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

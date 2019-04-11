@@ -1,28 +1,23 @@
 spring:
   application:
     name: register
-  profiles:
-    active: node2
   security:
-    basic:
-      enabled: true
     user:
       name: admin
       password: admin123
+  profiles:
+    # 当前启动的节点配置名
+    active: node2
   cloud:
     inetutils:
-      preferred-networks: 127.0.0.1
-    client:
-      ip-address: 127.0.0.1
+      preferred-networks: 10.205.29.42
 eureka:
-  server:
-    enable-self-preservation: true
   instance:
-    hostname: 127.0.0.1
     prefer-ip-address: true
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  server:
+     enable-self-preservation: false
   client:
-    registerWithEureka: true
-    fetchRegistry: false
+    register-with-eureka: true
+    fetch-registry: true
     healthcheck:
       enabled: true

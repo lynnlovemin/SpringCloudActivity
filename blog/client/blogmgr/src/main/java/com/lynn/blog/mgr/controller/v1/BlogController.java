@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
-@RequestMapping("{version}/close/blog")
+@RequestMapping("{version}/open/blog")
 @RestController
 public class BlogController extends BaseV1Controller {
 
