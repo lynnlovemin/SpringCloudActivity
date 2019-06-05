@@ -12,7 +12,7 @@ spring:
           uri: https://github.com/lynnlovemin/SpringCloudActivity.git
           searchPaths: config
           username: lynnlovemin
-          password: liyi880301
+          password: ******
       label: master
   rabbitmq:
     host: 127.0.0.1
