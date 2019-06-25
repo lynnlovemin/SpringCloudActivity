@@ -13,6 +13,12 @@
     <name>gateway</name>
     <description>服务网关</description>
 
+    <properties>
+        <druid.version>1.1.10</druid.version>
+        <spring.mybatis.version>1.3.2</spring.mybatis.version>
+        <mysql.version>5.1.46</mysql.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -26,6 +32,25 @@
             <artifactId>common</artifactId>
             <groupId>com.lynn.blog</groupId>
             <version>1.0-SNAPSHOT</version>
+            <!-- 由于gateway不能依赖web包，下面均依赖了web包，因此需要排除 -->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-openfeign</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
     <build>

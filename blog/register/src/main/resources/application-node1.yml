@@ -2,10 +2,11 @@ server:
   # 节点1的端口
   port: 8100
 eureka:
-  instance:
+#  instance:
     # 节点1的hostname，对应第一步中hosts的配置
-    hostname:  node1
+#    hostname:  node1
   client:
     serviceUrl:
       # 默认注册到节点1
-      defaultZone: http://admin:admin123@node2:8101/eureka/
+#      defaultZone: http://admin:admin123@node1:8100/eureka/
+      defaultZone: http://admin:admin123@localhost:8100/eureka/

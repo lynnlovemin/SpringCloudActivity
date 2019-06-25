@@ -1,14 +1,22 @@
 package com.lynn.blog.config.test;
 
+import lombok.Cleanup;
+
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
+import java.io.FileInputStream;
+import java.io.InputStream;
 
 public class JCETest {
 
     public static void main(String[] args) throws Exception{
-        securityVerify();
+        int i = 0;
+        for(int j = 0;j < 10;j++){
+
+        }
     }
+
 
     public static void securityVerify() throws Exception {
         byte[]     data = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07 };

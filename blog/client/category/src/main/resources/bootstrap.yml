@@ -6,7 +6,9 @@ spring:
       discovery:
         enabled: true
         serviceId: config
+      username: admin
+      password: admin
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://admin:admin123@localhost:8101/eureka/
+      defaultZone: http://admin:admin123@localhost:8100/eureka/
