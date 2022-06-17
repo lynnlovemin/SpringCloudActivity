@@ -12,7 +12,7 @@
     <artifactId>common</artifactId>
     <description>全局公共模块，所有服务都要依赖</description>
     <properties>
-        <fastjson.version>1.2.47</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <commons.version>2.6</commons.version>
         <joda.time.version>2.10.1</joda.time.version>
     </properties>
